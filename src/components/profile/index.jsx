@@ -5,6 +5,7 @@ export default class Profile extends React.Component {
     return (
       <div>
         <h1>I am profile</h1>
+        <h1>I am profile</h1>
       </div>
     );
   }
