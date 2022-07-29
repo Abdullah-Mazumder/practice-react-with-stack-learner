@@ -1,0 +1,79 @@
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  margin-top: 50px;
+  border: 1px solid #ddd;
+}
+
+.bio {
+  margin-bottom: 30px;
+}
+
+.bio h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.bio p {
+  font-size: 17px;
+  color: #222222;
+  margin-top: 5px;
+}
+
+.skills {
+  margin-bottom: 30px;
+}
+
+.skills h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.skills ul {
+  list-style-type: none;
+}
+
+.skills ul li {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-right: 20px;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.links {
+  margin-bottom: 30px;
+}
+
+.links h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.links ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 5px 15px;
+}
+
+.links ul li a {
+  color: #02075d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.links ul li a:hover {
+  color: #ffa500;
+}
