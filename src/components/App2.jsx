@@ -2,7 +2,7 @@ import React from "react";
 
 import SignupForm from "./sign-up-form/index";
 
-class App extends React.Component {
+class App2 extends React.Component {
   state = {
     users: [],
   };
@@ -34,4 +34,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App2;
