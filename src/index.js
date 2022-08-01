@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/pollApp/app";
+// import App from './components/todo/app';
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 

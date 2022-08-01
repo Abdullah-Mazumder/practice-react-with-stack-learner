@@ -20,9 +20,8 @@ const polls = [
     those which frontend framework you like and prefer others?`,
     options: [
       { id: "454157", value: "Angular", vote: 0 },
-      { id: "415715", value: "React", vote: 0 },
+      { id: "415716", value: "React", vote: 0 },
       { id: "41544s", value: "Vue", vote: 0 },
-      { id: "415715", value: "React", vote: 0 },
     ],
     created: new Date(),
     totalVote: 0,
