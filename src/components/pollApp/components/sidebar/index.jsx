@@ -8,6 +8,7 @@ class Sidebar extends React.Component {
   state = {
     openModal: false,
   };
+  
   toggleModal = () => {
     this.setState({
       openModal: !this.state.openModal,

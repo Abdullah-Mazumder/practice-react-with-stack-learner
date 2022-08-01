@@ -4,6 +4,7 @@ import shortid from "shortid";
 
 import MainContent from "./components/mainContent";
 import Sidebar from "./components/sidebar";
+import SinglePollDetails from "./components/singlePollDetails";
 
 import POLLS from "./components/data/poll";
 
@@ -12,6 +13,7 @@ class App extends React.Component {
     polls: [],
     selectedPoll: {},
     searchTerm: "",
+    filterTerm: "",
   };
 
   componentDidMount() {
@@ -79,9 +81,37 @@ class App extends React.Component {
     this.setState({ polls });
   };
 
+  handleFilter = (value, e) => {
+    e.preventDefault();
+    this.setState({
+      filterTerm: value
+    })
+  };
+
+  performFilter = () => {
+    const {filterTerm} = this.state;
+    const opinions = this.state.selectedPoll.opinions
+    if (filterTerm === '') {
+      return this.state.selectedPoll.opinions
+    }
+    return opinions.filter(op => op.selectedOption === filterTerm);
+  }
+
+  searchOption = (value) => {
+    const { selectedPoll } = this.state;
+    if (selectedPoll.opinions && selectedPoll.opinions.length > 0) {
+      const option = selectedPoll.options.find((opt) => opt.id === value);
+      return option.value;
+    }
+  };
+
   render() {
-    const polls = this.performSearch()
-    console.log(this.state)
+    const polls = this.performSearch();
+    let opinions = this.state.selectedPoll.opinions;
+    let options = this.state.selectedPoll.opinions;
+    if (this.state.filterTerm) {
+      opinions = this.performFilter()
+    }
     return (
       <div>
         <Container className="my-5 card card-body p-5">
@@ -105,6 +135,18 @@ class App extends React.Component {
               />
             </Col>
           </Row>
+          {Object.keys(this.state.selectedPoll).length > 0 ? <Row>
+            <Col className="card card-body">
+              <SinglePollDetails
+                filterTerm={this.state.filterTerm}
+                opinions={opinions}
+                options={options}
+                poll={this.state.selectedPoll}
+                handleFilter={this.handleFilter}
+                searchOption={this.searchOption}
+              />
+            </Col>
+          </Row> : ''}
         </Container>
       </div>
     );
